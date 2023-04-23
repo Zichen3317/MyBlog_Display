@@ -15,6 +15,10 @@
 .game-display-container {
     display: flex; /* 设置为flex布局，实现水平排列效果 */
     justify-content:left; /* 设置子元素在容器中居中显示 */
+    flex-wrap: wrap;/*流动布局*/
+    border: 1px #a52a2a dashed;
+    border-radius: 10px;
+    margin-bottom: 10px;
     }
 .game-display {
     position: relative;/* 设置为相对定位，以便后面设置图片的绝对定位 */
@@ -25,7 +29,8 @@
     line-height: 80px;
     overflow: hidden;/* 隐藏溢出部分的图片 */
     border-radius: 10px;
-    margin-right: 10px;/*设置元素间间距*/
+    margin:5px 5px 5px 5px;/*设置元素间间距*/
+
     /*高亮边框*/
     background: linear-gradient(to left, #2CD5FF, #2CD5FF) left top no-repeat,
     linear-gradient(to bottom, #2CD5FF, #2CD5FF) left top no-repeat,
