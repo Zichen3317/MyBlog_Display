@@ -84,25 +84,28 @@
                 <div class="rin-card-article">
 
                     本博客为<b>纯静态</b>页面，涉及的开发语言有<i>HTML+CSS+JavaScript</i>
-                    <br>主体结构如下
-                    <code>
-                        - index.html //主页
-                        - assets //资源存放处
-                            - js
-                                - ArtDisplay.js //文章页面写入用
-                                - ArtlistDisplay.js //列出同一类型的文章
-                                - GenreAndArt_Sort.js //列出不同类型
-                                - main.js
-                                - highlight //代码高亮库
-                            - img
-                            - css
-                        - pages //子页面存放处
-                            - index.css
-                            - main.css
-                            - test.css //测试用
-                            - zc-display.css //二次开发用到的样式
-                        - mdui //库
-                    </code>
+                    <br>主体结构如下<br>
+                    <pre>
+                        <code>
+                            - index.html //主页
+                            - assets //资源存放处
+                                - js
+                                    - ArtDisplay.js //文章页面写入用
+                                    - ArtlistDisplay.js //列出同一类型的文章
+                                    - GenreAndArt_Sort.js //列出不同类型
+                                    - main.js
+                                    - highlight //代码高亮库
+                                - img
+                                - css
+                            - pages //子页面存放处
+                                - index.css
+                                - main.css
+                                - test.css //测试用
+                                - zc-display.css //二次开发用到的样式
+                            - mdui //库
+                        </code>
+                    </pre>
+
 
                 </div>
                 <!--开发日志-->
@@ -114,6 +117,10 @@
                         <div class="rin-card rin-btn-radius about-card-left">
                             <span class="front-text">Ver 1.0</span>
                             <span class="behind-text">博客页面正式建立并完成挂载</span>
+                        </div>
+                        <div class="rin-card rin-btn-radius about-card-left">
+                            <span class="front-text" style="color: #87ff2a;">Ver 1.1</span>
+                            <span class="behind-text">新增About页与主页的游戏展示栏</span>
                         </div>
                     </div>
                     <div class="about-container-right"></div>
@@ -155,6 +162,10 @@
     <!--<script src="/assets/js/main.js"></script>-->
     <!--音乐播放器-->
     <script src="https://myhkw.cn/api/player/168213779949" id="myhk" key="168213779949" m="1"></script>
+    <script>
+        // 开启代码高亮
+        hljs.initHighlightingOnLoad();
+    </script>
 
 </body>
 

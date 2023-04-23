@@ -194,6 +194,8 @@
   border: 2px groove;
   border-radius: 20px;
   border-color: transparent;
+  /*间距*/
+  margin: 5px 5px 5px 5px;
 }
 
 .about-card-left:hover {
