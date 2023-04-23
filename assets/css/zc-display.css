@@ -12,6 +12,17 @@
     overflow: hidden;/* 隐藏溢出部分的图片 */
     border-radius: 10px;
     margin-right: 10px;/*设置元素间间距*/
+    /*高亮边框*/
+    background: linear-gradient(to left, #2CD5FF, #2CD5FF) left top no-repeat,
+    linear-gradient(to bottom, #2CD5FF, #2CD5FF) left top no-repeat,
+    linear-gradient(to left, #2CD5FF, #2CD5FF) right top no-repeat,
+    linear-gradient(to bottom, #2CD5FF, #2CD5FF) right top no-repeat,
+    linear-gradient(to left, #2CD5FF, #2CD5FF) left bottom no-repeat,
+    linear-gradient(to bottom, #2CD5FF, #2CD5FF) left bottom no-repeat,
+    linear-gradient(to left, #2CD5FF, #2CD5FF) right bottom no-repeat,
+    linear-gradient(to left, #2CD5FF, #2CD5FF) right bottom no-repeat;
+    background-size: 2px 20px, 20px 2px, 2px 20px, 20px 2px;
+    border: 0.5px  #073F97;
     }
     .game-display img {
     position: absolute;/* 设置为绝对定位，以便后面设置图片的显示位置 */
