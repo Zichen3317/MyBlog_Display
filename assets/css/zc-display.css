@@ -1,3 +1,17 @@
+/*左边侧边栏颜色拓展*/
+.rin-btn-purple {
+    border-bottom: 1.5px solid #ee82ee;
+}
+
+.rin-btn-purple:hover { 
+    background-color: #ee82ee;
+    transition: all .3s;
+}
+/*补充圆角*/
+.rin-btn-radius{
+    border-radius: 20px;
+}
+/*主页游戏展示框*/
 .game-display-container {
     display: flex; /* 设置为flex布局，实现水平排列效果 */
     justify-content:left; /* 设置子元素在容器中居中显示 */
@@ -39,3 +53,44 @@
     .game-display .text {
     display: block;
     }
+
+/*关于页右半部分展示*/
+.about-container {
+display: flex; /* 使用Flexbox布局 */
+justify-content: space-between; /* 设置容器内元素水平分布 */
+}
+.about-left-container {
+width: 25%; /* 左边容器占据整个容器的25% */
+border: 1px solid;
+border-color: #2CD5FF;
+border-radius: 20px;
+}
+.about-right-container {
+width: 75%; /* 右边容器占据整个容器的75% */
+}
+
+.about-card-left {
+    border: 2px groove;
+    border-radius: 20px;
+    border-color:transparent;
+}
+.about-card-left:hover{
+    transition:all 0.6s ease;
+    
+}
+
+.about-card-left .behind-text{
+    position: absolute;
+    color:transparent;
+}
+
+.about-card-left .front-text:hover + .behind-text{
+    color: #fff;
+    transition:all 0.5s ease;
+    transform:translate(40px,0);
+}
+
+.about-card-left .front-text{
+    color: goldenrod;
+    font-weight: bold;
+}
