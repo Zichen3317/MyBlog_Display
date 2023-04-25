@@ -34,18 +34,24 @@ function Display(Display_data) {
   ArticleHtml += `
   <div class="article-info">
   <div class="rin-article-more">
-  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-key"></span>&nbsp;数据库ID:${
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-key"></span>&nbsp;数据库ID:&nbsp;${
     Display_data[Display_article_data][2]
   }&nbsp;<br></div>
-  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-id-card-o"></span>&nbsp;作者:${
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-id-card-o"></span>&nbsp;作者:&nbsp;${
     Display_data[Display_article_data][9]
   }&nbsp;${Display_data[Display_article_data][8]}&nbsp;<br></div>
-  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;发布时间:${
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;发布时间:&nbsp;${
     Display_data[Display_article_data][5].split(".")[0]
   }&nbsp;<br></div>
-  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;最后一次编辑时间:${
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;最后一次编辑时间:&nbsp;${
     Display_data[Display_article_data][4].split(".")[0]
   }</div>
+  <div style="margin-bottom:5px;margin-top:5px"><span class=" 	fa fa-tags"></span>&nbsp;类型:&nbsp;${Display_data[
+    Display_article_data
+  ][11]
+    .split("丨")
+    .join("&nbsp;")}</div>
+
   </div>
   </div>
   `;
