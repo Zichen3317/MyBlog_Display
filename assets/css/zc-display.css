@@ -225,7 +225,7 @@
   background-color: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(3px); /*毛玻璃效果*/
 }
-.rin-card-article {
+.zc-card-article {
   border-radius: 10px;
   backdrop-filter: blur(5px); /*毛玻璃效果*/
   border: 3px solid rgba(0, 0, 0, 0.08);

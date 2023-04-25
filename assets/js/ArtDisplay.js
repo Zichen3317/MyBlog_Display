@@ -58,7 +58,7 @@ function Display(Display_data) {
   //文章主主体
   ArticleHtml += `
 
-<div class="rin-card-article">
+<div class="rin-card-article zc-card-article">
     <div class="rin-article-title">${Display_article_data}</div>
     <div class="rin-article-content">${Display_data[Display_article_data][1]}</div>
 </div>
