@@ -30,6 +30,26 @@ function Display(Display_data) {
   const ArticleList = document.getElementById("Article");
   let ArticleHtml = "";
   //文章
+  //创建和编辑时间
+  ArticleHtml += `
+  <div class="article-info">
+  <div class="rin-article-more">
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-key"></span>&nbsp;数据库ID:${
+    Display_data[Display_article_data][2]
+  }&nbsp;<br></div>
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-id-card-o"></span>&nbsp;作者:${
+    Display_data[Display_article_data][9]
+  }&nbsp;${Display_data[Display_article_data][8]}&nbsp;<br></div>
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;发布时间:${
+    Display_data[Display_article_data][5].split(".")[0]
+  }&nbsp;<br></div>
+  <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;最后一次编辑时间:${
+    Display_data[Display_article_data][4].split(".")[0]
+  }</div>
+  </div>
+  </div>
+  `;
+  //文章主主体
   ArticleHtml += `
 
 <div class="rin-card-article">
