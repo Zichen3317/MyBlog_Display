@@ -238,3 +238,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
 }
+.zc-card-Display-Img {
+  width: 70vw;
+  height: 50vw;
+}
