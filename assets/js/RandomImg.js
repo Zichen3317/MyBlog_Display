@@ -44,6 +44,8 @@ function DisplayImg(PageData) {
   console.debug("[DisplayImg]开始写入页面");
   //写入部分
   const Display_Img = document.getElementById("Display_Img");
+  //清空元素内原有图片
+  Display_Img.innerHTML=""
   let Img = "";
   //标题
   Img += `
