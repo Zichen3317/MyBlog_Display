@@ -39,6 +39,7 @@ function DisplayImg(PageData) {
 
   var OriUrl = PageData[parseInt(RandomImgNum - 1)]["original_url"];
   var ImgName = PageData[parseInt(RandomImgNum - 1)]["title"];
+  var RegularUrl = PageData[parseInt(RandomImgNum - 1)]["regular_url"];
 
   //将图片展示到页面上
   console.debug("[DisplayImg]开始写入页面");
@@ -53,7 +54,7 @@ function DisplayImg(PageData) {
     <a href="">#</a> ${ImgName}
   </div>`;
   //图片
-  Img += `<img src=${OriUrl} style="width: 100%;height: 90%;object-fit: contain;"></img>`;
+  Img += `<img src=${RegularUrl} style="width: 100%;height: 90%;object-fit: contain;"></img>`;
   Display_Img.innerHTML += Img;
   console.debug("[DisplayImg]完成写入");
 }
