@@ -59,6 +59,8 @@ function DisplayImg(PageData) {
   //图片
   Img += `<img src=${RegularUrl} style="width: 100%;height: 90%;object-fit: contain;"></img>`;
   Display_Img.innerHTML += Img;
+  //向下载按钮写入原图链接
+  document.getElementById('Img-download').href=OriUrl;
   console.debug("[DisplayImg]完成写入");
 }
 

@@ -242,3 +242,11 @@
   width: 70vw;
   height: 50vw;
 }
+.zc-card-Display-control{
+  display: flex;
+  /* 设置为flex布局，实现水平排列效果 */
+  justify-content: left;
+  /* 设置子元素在容器中居中显示 */
+  flex-wrap: wrap;
+  /*流动布局*/
+}
