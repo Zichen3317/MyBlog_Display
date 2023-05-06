@@ -250,3 +250,6 @@
   flex-wrap: wrap;
   /*流动布局*/
 }
+.zc-card-Display-control.Img_download{
+background-color: rgba(0, 0, 0, 0.3);
+}
