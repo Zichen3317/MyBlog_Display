@@ -51,7 +51,7 @@ function DisplayImg(PageData) {
     <a href="">#</a> ${ImgName}
   </div>`;
   //图片
-  Img += `<img src=${OriUrl} style="width: 100%;height: 100%;object-fit: contain;"></img>`;
+  Img += `<img src=${OriUrl} style="width: 100%;height: 90%;object-fit: contain;"></img>`;
   Display_Img.innerHTML += Img;
   console.debug("[DisplayImg]完成写入");
 }
