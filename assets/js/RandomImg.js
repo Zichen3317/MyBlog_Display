@@ -1,3 +1,6 @@
+var RandonImgRange = [1,30]//随机的图片范围，这个不能改
+var RandonPageRange = [1,20]//随机的页面范围，可改
+
 function GETPageData(pageUrl) {
   //获得一整个页面的图片数据
   console.debug("[RandomImg.js][crawler]正在获取图片数据");
@@ -34,7 +37,7 @@ function GETPageData(pageUrl) {
 
 function DisplayImg(PageData) {
   //console.log(PageData);
-  var RandomImgNum = Math.floor(30 * Math.random() + 1); //获取[m，n]区间内的随机整数
+  var RandomImgNum = (RandonImgRange[1]+1- RandonImgRange[0]) * Math.random() + RandonImgRange[0];  //获取[m，n]区间内的随机整数
   console.debug("[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomImgNum);
 
   var OriUrl = PageData[parseInt(RandomImgNum - 1)]["original_url"];
@@ -63,7 +66,7 @@ function RandomImg_Start() {
   //按钮绑定的引导函数
   console.debug("[RandomImg.js][RandomImg_Start]开始获取");
   //(n+1- m) * Math.random() + m;
-  var RandomPageNum = Math.floor(10 * Math.random() + 1); //获取[m，n]区间内的随机整数
+  var RandomPageNum = (RandonPageRange[1]+1- RandonPageRange[0]) * Math.random() + RandonPageRange[0];  //获取[m，n]区间内的随机整数
   console.debug(
     "[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomPageNum
   );
