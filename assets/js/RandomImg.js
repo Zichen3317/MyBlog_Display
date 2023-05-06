@@ -39,7 +39,7 @@ function DisplayImg(PageData) {
   //console.log(PageData);
   var RandomImgNum = (RandonImgRange[1]+1- RandonImgRange[0]) * Math.random() + RandonImgRange[0];  //获取[m，n]区间内的随机整数
   console.debug("[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomImgNum);
-
+//展示在页面上的是压缩后图片以节约资源，下载的图片链接是原始图片
   var OriUrl = PageData[parseInt(RandomImgNum - 1)]["original_url"];
   var ImgName = PageData[parseInt(RandomImgNum - 1)]["title"];
   var RegularUrl = PageData[parseInt(RandomImgNum - 1)]["regular_url"];
