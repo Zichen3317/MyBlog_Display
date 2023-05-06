@@ -72,7 +72,7 @@ function RandomImg_Start() {
     "[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomPageNum
   );
   var ImgPageURL =
-    "https://www.vilipix.com/tags/%E9%A3%8E%E6%99%AF/illusts?p=" +
+    "https://www.vilipix.com/tags/原神/illusts?p=" +
     RandomPageNum; //母链，页数随机
   GETPageData(ImgPageURL);
 }
