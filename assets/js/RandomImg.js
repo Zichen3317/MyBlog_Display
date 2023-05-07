@@ -1,7 +1,12 @@
-var RandonImgRange = [1,30]//随机的图片范围，这个不能改
 var RandonPageRange = [1,20]//随机的页面范围，可改
 
-function GETPageData(pageUrl) {
+// 随机生成 [n, m] 之间的整数
+function getRandomInt(n, m) {
+  return Math.floor(Math.random() * (m - n + 1)) + n;
+}
+
+
+function GETPageData(pageUrl,PageRange) {
   //获得一整个页面的图片数据
   console.debug("[RandomImg.js][crawler]正在获取图片数据");
   //获得页面信息，算offset的值
@@ -15,6 +20,10 @@ function GETPageData(pageUrl) {
     offset +
     "&sort=new&tags=" +
     classification;
+
+  //输出拼接后的api链接
+  //console.debug("[GETPageData]apiUrl= "+apiUrl)
+  
   fetch(apiUrl, {
     method: "GET",
     headers: {
@@ -25,19 +34,30 @@ function GETPageData(pageUrl) {
   })
     .then((response) => response.json())
     .then((data) => {
+      //如果数据量过少，会出现返回的json内部没有数据，需要进行判断，
+      //  如果为空数据则减少页数重新获取
       JsonData = data["data"]["rows"];
+      Img_total =data["data"]["rows"].length;
       console.debug("[RandomImg.js][crawler]数据获取成功");
-      //console.log(JsonData);
-      //执行页面写入函数
-      DisplayImg(JsonData);
+
+      if (Img_total === 0){
+        //获得空数据，说明该tag下的数据量不足，将获取的页数范围减半重新获取
+        RandomImg_Start(PageRange=[PageRange[0],PageRange[0]+parseInt((PageRange[1]-PageRange[0])/2)]);
+        console.debug("[GETPageData]数据量不足，更改页数范围至=> "+PageRange[0]+","+(PageRange[0]+parseInt((PageRange[1]-PageRange[0])/2)));
+      }else{
+        //console.log(JsonData);
+        //执行页面写入函数
+        DisplayImg(JsonData,Img_total);
+      }
+
     })
     .catch((error) => console.error(error));
 }
 
-function DisplayImg(PageData) {
+function DisplayImg(PageData,Img_total) {
   //打印获取到的json数据
-  console.log(PageData);
-  var RandomImgNum = (RandonImgRange[1]+1- RandonImgRange[0]) * Math.random() + RandonImgRange[0];  //获取[m，n]区间内的随机整数
+  //console.log(PageData);
+  var RandomImgNum = getRandomInt(1,Img_total);  //获取[m，n]区间内的随机整数
   console.debug("[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomImgNum);
 //展示在页面上的是压缩后图片以节约资源，下载的图片链接是原始图片
   var ImgData = PageData[parseInt(RandomImgNum - 1)];
@@ -61,6 +81,7 @@ function DisplayImg(PageData) {
   var like_total = ImgData["like_total"];
   var tags = ImgData["tags"];
   var created_at = ImgData["created_at"].split(".")[0].replace("T"," ");
+  
   //图片相关信息
   Img +=`
   <div class="rin-article-more" style="display: flex;justify-content: left;flex-wrap: wrap;">
@@ -83,23 +104,49 @@ function DisplayImg(PageData) {
   console.debug("[DisplayImg]完成写入");
 }
 
-function RandomImg_Start() {
+function RandomImg_Start(PageRange=[1,2]) {
   //按钮绑定的引导函数
   console.debug("[RandomImg.js][RandomImg_Start]开始获取");
   //(n+1- m) * Math.random() + m;
-  var RandomPageNum = (RandonPageRange[1]+1- RandonPageRange[0]) * Math.random() + RandonPageRange[0];  //获取[m，n]区间内的随机整数
+  var RandomPageNum = getRandomInt(RandonPageRange[0],RandonPageRange[1])  //获取[m，n]区间内的随机整数
   console.debug(
     "[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomPageNum
   );
 
   var ImgNode = document.getElementById("ImgNode").value;
   var ImgTag = document.getElementById("ImgTag").value;
+  console.debug("[RandomImg.js][RandomImg_Start]Tag="+ImgTag);
+
   if(ImgNode === "vilipix插画世界"){
     console.debug("[RandomImg.js][RandomImg_Start]选择节点：vilipix插画世界")
-    var ImgPageURL =
-    `https://www.vilipix.com/tags/${ImgTag}/illusts?p=${RandomPageNum}`; //母链，页数随机
-  GETPageData(ImgPageURL);
+
+    if(PageRange!==0){//如果指定了页数范围就按指定的页数范围获取，如果没有就按照最上方设置的范围随机获取
+      var ImgPageURL =
+      `https://www.vilipix.com/tags/${ImgTag}/illusts?p=${getRandomInt(PageRange[0],PageRange[1])}`; //母链，页数随机
+    }else{
+      var ImgPageURL =
+      `https://www.vilipix.com/tags/${ImgTag}/illusts?p=${getRandomInt(RandonPageRange[0],RandonPageRange[1])}`; //母链，页数随机
+    }
+
+
+  GETPageData(ImgPageURL,PageRange);
   }else{
     console.warn("未找到该节点："+ImgNode)
+  }
+}
+//节点改变时更换tag选项
+function NodeToTag( ){
+  var ImgTagSelect = document.getElementById("ImgTag");
+  var ImgNode = document.getElementById("ImgNode").value;
+  var vilipix_ImgTag = [//需要写入的option,第一个是option对外展示的内容,第二个是option的值
+    ["风景","风景"],
+    ["原神","原神"],
+    ["崩坏：星穹铁道(通道1)","崩坏：星穹铁道"],
+    ["崩坏：星穹铁道(通道2)","HonkaiStarRail"],];
+  if(ImgNode==="vilipix插画世界"){
+    for(i=0;i<vilipix_ImgTag.length;i++){
+      var opt = new Option(vilipix_ImgTag[i][0],vilipix_ImgTag[i][1]);
+      ImgTagSelect.options.add(opt);
+    }
   }
 }

@@ -75,7 +75,8 @@
                                 <!--选择图片来源-->
                                 <div>
                                     选择图片来源：
-                                    <select id="ImgNode">
+                                    <select id="ImgNode" onchange="NodeToTag()">
+                                        <option value="vilipix插画世界">---请选择节点---</option>
                                         <option>vilipix插画世界</option>
                                     </select>
                                 </div>
@@ -83,9 +84,7 @@
                                     <!--选择图片tag-->
                                     选择图片tag(暂不开放自定义)：
                                     <select id="ImgTag">
-                                        <option>风景</option>
-                                        <option>原神</option>
-                                        <option>崩坏：星穹铁道</option>
+                                        <!--写入tag用-->
                                     </select>
                                 </div>
                             </form>
