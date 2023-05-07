@@ -135,8 +135,10 @@ function RandomImg_Start(PageRange=[1,2]) {
   }
 }
 //节点改变时更换tag选项
-function NodeToTag( ){
+function NodeToTag(){
   var ImgTagSelect = document.getElementById("ImgTag");
+  //先清空select里的tag
+  ImgTagSelect.length = 0
   var ImgNode = document.getElementById("ImgNode").value;
   var vilipix_ImgTag = [//需要写入的option,第一个是option对外展示的内容,第二个是option的值
     ["风景","风景"],
