@@ -103,6 +103,14 @@ function DisplayImg(PageData,Img_total) {
 }
 
 function RandomImg_Start(PageRange=[1,2]) {
+  //在完成写入之前，先写入加载中动画
+  const Display_Img = document.getElementById("Display_Img");
+  Display_Img.innerHTML = `
+  <svg viewBox="25 25 50 50">
+  <circle r="20" cy="50" cx="50"></circle>
+  </svg>
+  `;
+
   //按钮绑定的引导函数
   console.debug("[RandomImg.js][RandomImg_Start]开始获取");
   //(n+1- m) * Math.random() + m;
