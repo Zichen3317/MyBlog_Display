@@ -33,7 +33,7 @@
 
 </head>
 
-<body class="mdui-theme-primary-pink mdui-theme-accent-pink">
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink" onload="GetCommitData(10)"><!--GetCommitData(需要获取的commit历史条数)-->
     <div id="rin-bg"></div>
     <main id="rin-main">
         <div class="mdui-row">
@@ -104,8 +104,11 @@
                         </div>
                 </div>
 
+                <div class="Commit" id="Commit">
+                    <!--写入commit用-->
+                </div>
 
-                <div class="rin-tr"></div>
+                <div class="rin-tr"></div>  
                 <!--底部-->
                 <div class="rin-card-part" id="last">
                     <div class="rin-card-title2">ZiChen</div>
