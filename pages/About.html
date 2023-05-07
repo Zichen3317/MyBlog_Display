@@ -33,7 +33,7 @@
 
 </head>
 
-<body class="mdui-theme-primary-pink mdui-theme-accent-pink">
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink" onload="GetCommitData(5)"><!--GetCommitData(需要获取的commit历史条数)-->
     <div id="rin-bg"></div>
     <main id="rin-main">
         <div class="mdui-row">
@@ -116,21 +116,9 @@
                         <a href="#log">#</a> 开发日志
                     </div>
                     <div class="about-container">
-                        <div class="about-container-left">
-                            <div class="rin-card rin-btn-radius about-card-left">
-                                <span class="front-text">Ver 1.0</span>
-                                <span class="behind-text">博客页面正式建立并完成挂载</span>
-                            </div>
-                            <div class="rin-card rin-btn-radius about-card-left">
-                                <span class="front-text" style="color: #87ff2a;">Ver 1.1</span>
-                                <span class="behind-text">新增About页与主页的游戏展示栏</span>
-                            </div>
-                            <div class="rin-card rin-btn-radius about-card-left">
-                                <span class="front-text" style="color: #87ff2a;">Ver 1.2</span>
-                                <span class="behind-text">新增Toolbox页和随机壁纸小工具</span>
-                            </div>
+                        <div class="Commit" id="Commit">
+                            <!--写入commit用-->
                         </div>
-                        <div class="about-container-right"></div>
                     </div>
 
 
@@ -172,6 +160,7 @@
         // 开启代码高亮
         hljs.initHighlightingOnLoad();
     </script>
+    <script src="../assets/js/AboutDisplay.js"></script>
 
 </body>
 
