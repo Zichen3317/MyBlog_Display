@@ -142,9 +142,13 @@ function NodeToTag(){
   var ImgNode = document.getElementById("ImgNode").value;
   var vilipix_ImgTag = [//需要写入的option,第一个是option对外展示的内容,第二个是option的值
     ["风景","风景"],
-    ["原神","原神"],
-    ["崩坏：星穹铁道(通道1)","崩坏：星穹铁道"],
-    ["崩坏：星穹铁道(通道2)","HonkaiStarRail"],];
+    ["原神(中文Tag)","原神"],
+    ["原神(英文Tag)","Genshin"],
+    ["崩坏：星穹铁道(中文Tag)","崩坏：星穹铁道"],
+    ["崩坏：星穹铁道(英文Tag)","HonkaiStarRail"],
+    ["明日方舟(中文Tag)","明日方舟"]
+    ["明日方舟(英文Tag)","Arknights"]
+  ];
   if(ImgNode==="vilipix插画世界"){
     for(i=0;i<vilipix_ImgTag.length;i++){
       var opt = new Option(vilipix_ImgTag[i][0],vilipix_ImgTag[i][1]);
