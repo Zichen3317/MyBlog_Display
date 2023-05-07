@@ -116,3 +116,22 @@
   flex-wrap: wrap;
   /*流动布局*/
 }
+
+/*下拉选择框*/
+select{
+  border-radius: 19px;
+  background: rgba(0,0,0,0.1);
+  box-shadow:  10px 10px 20px rgba(0,0,0,.01),
+               -10px -10px 20px rgba(0,0,0,.02);
+  color: #fff;
+}
+option{
+  border-radius: 19px;
+  background:  rgba(0,0,0,0.1);
+  box-shadow:  10px 10px 20px rgba(0,0,0,.01),
+               -10px -10px 20px rgba(0,0,0,.02);
+  color: #fff;
+}
+option :hover{
+  background: rgba(0,0,0,0.3);
+}
