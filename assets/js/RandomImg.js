@@ -35,26 +35,46 @@ function GETPageData(pageUrl) {
 }
 
 function DisplayImg(PageData) {
-  //console.log(PageData);
+  //打印获取到的json数据
+  console.log(PageData);
   var RandomImgNum = (RandonImgRange[1]+1- RandonImgRange[0]) * Math.random() + RandonImgRange[0];  //获取[m，n]区间内的随机整数
   console.debug("[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomImgNum);
 //展示在页面上的是压缩后图片以节约资源，下载的图片链接是原始图片
-  var OriUrl = PageData[parseInt(RandomImgNum - 1)]["original_url"];
-  var ImgName = PageData[parseInt(RandomImgNum - 1)]["title"];
-  var RegularUrl = PageData[parseInt(RandomImgNum - 1)]["regular_url"];
+  var ImgData = PageData[parseInt(RandomImgNum - 1)];
+  var OriUrl = ImgData["original_url"];
+  var ImgName = ImgData["title"];
+  var RegularUrl = ImgData["regular_url"];
 
   //将图片展示到页面上
   console.debug("[DisplayImg]开始写入页面");
   //写入部分
   const Display_Img = document.getElementById("Display_Img");
   //清空元素内原有图片
-  Display_Img.innerHTML=""
+  Display_Img.innerHTML="";
   let Img = "";
   //标题
   Img += `
     <div class="rin-card-title2 mdui-typo">
     <a href="">#</a> ${ImgName}
-  </div>`;
+  </div>
+  `;
+  var like_total = ImgData["like_total"];
+  var tags = ImgData["tags"];
+  var created_at = ImgData["created_at"].split(".")[0].replace("T"," ");
+  //图片相关信息
+  Img +=`
+  <div class="rin-article-more" style="display: flex;justify-content: left;flex-wrap: wrap;">
+  <div style="margin-left: 10px;">
+      <img src="../../assets/img/tool/like.png" style="width: 12px;height: 12px;">&nbsp;${like_total}
+  </div>
+  <div style="margin-left: 10px;">
+      Tags：&nbsp;${tags}
+  </div>
+  <div style="margin-left: 10px;">
+      Created_at:&nbsp;${created_at}
+  </div>
+</div>
+  `
   //图片
   Img += `<img src=${RegularUrl} style="width: 100%;height: 90%;object-fit: contain;"></img>`;
   Display_Img.innerHTML += Img;
@@ -71,8 +91,15 @@ function RandomImg_Start() {
   console.debug(
     "[RandomImg.js][RandomImg_Start]RandomPageNum=" + RandomPageNum
   );
-  var ImgPageURL =
-    "https://www.vilipix.com/tags/原神/illusts?p=" +
-    RandomPageNum; //母链，页数随机
+
+  var ImgNode = document.getElementById("ImgNode").value;
+  var ImgTag = document.getElementById("ImgTag").value;
+  if(ImgNode === "vilipix插画世界"){
+    console.debug("[RandomImg.js][RandomImg_Start]选择节点：vilipix插画世界")
+    var ImgPageURL =
+    `https://www.vilipix.com/tags/${ImgTag}/illusts?p=${RandomPageNum}`; //母链，页数随机
   GETPageData(ImgPageURL);
+  }else{
+    console.warn("未找到该节点："+ImgNode)
+  }
 }

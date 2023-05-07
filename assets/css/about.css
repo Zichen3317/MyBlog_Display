@@ -1,0 +1,48 @@
+/*关于页右半部分展示*/
+.about-container {
+    display: flex;
+    /* 使用Flexbox布局 */
+    justify-content: space-between;
+    /* 设置容器内元素水平分布 */
+  }
+  
+  .about-left-container {
+    width: 25%;
+    /* 左边容器占据整个容器的25% */
+    border: 1px solid;
+    border-color: #2cd5ff;
+    border-radius: 20px;
+  }
+  
+  .about-right-container {
+    width: 75%;
+    /* 右边容器占据整个容器的75% */
+  }
+  
+  .about-card-left {
+    border: 2px groove;
+    border-radius: 20px;
+    border-color: transparent;
+    /*间距*/
+    margin: 5px 5px 5px 5px;
+  }
+  
+  .about-card-left:hover {
+    transition: all 0.6s ease;
+  }
+  
+  .about-card-left .behind-text {
+    position: absolute;
+    color: transparent;
+  }
+  
+  .about-card-left .front-text:hover + .behind-text {
+    color: #fff;
+    transition: all 0.5s ease;
+    transform: translate(40px, 0);
+  }
+  
+  .about-card-left .front-text {
+    color: goldenrod;
+    font-weight: bold;
+  }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../assets/css/index.css">
     <!--自定义css-->
     <link rel="stylesheet" href="../../assets/css/zc-display.css">
+    <link rel="stylesheet" href="../../assets/css/tool.css">
     <!-- <link rel="stylesheet" href="/assets/css/detaile.css"> -->
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1625701_q2422cy34wn.css">
     <link rel="stylesheet" href="../../assets/img/font-awesome-4.7.0/css/font-awesome.css">
@@ -53,7 +54,8 @@
                         href="../../pages/blog/category.html" target="_blank"><span class="iconfont iconBlog"></span>
                         Blog</a>
                     <a class="mdui-btn mdui-btn-raised rin-btn rin-btn-purple rin-btn-left mdui-text-capitalize"
-                        href="./category.html" target="_blank" id="rin-left-a-toolboxlist"><span class="fa fa-wrench"></span>
+                        href="./category.html" target="_blank" id="rin-left-a-toolboxlist"><span
+                            class="fa fa-wrench"></span>
                         Tool
                         Box</a>
 
@@ -67,19 +69,39 @@
                 <div class="rin-card-title2 mdui-typo">工具>随机壁纸</div>
 
                 <div class="zc-card-article">
-                    <div class="zc-card-Display-Img" id="Display_Img">
-                        <!--写入图片用-->
-                    </div>
-                    <div class="zc-card-Display-control">
-                        <button onclick="RandomImg_Start()" class="zc-Display-Img-refresh">
-                            <span class="zc-Display-Img-refresh-content">Refresh</span></button>
-                        <a id="Img-download" class="zc-Display-Img-download">
-                            <span class="zc-Display-Img-download-content">
-                                Download
-                            </span>
-                            
-                        </a>
-                    </div>
+
+                        <div>
+                            <form class="zc-card-Display-node-selection">
+                                <!--选择图片来源-->
+                                <div>
+                                    选择图片来源：
+                                    <select id="ImgNode">
+                                        <option>vilipix插画世界</option>
+                                    </select>
+                                </div>
+                                <div style="margin-left: 10px;">
+                                    <!--选择图片tag-->
+                                    选择图片tag(暂不开放自定义)：
+                                    <select id="ImgTag">
+                                        <option>风景</option>
+                                        <option>原神</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="zc-card-Display-Img" id="Display_Img">
+                            <!--写入图片用-->
+                        </div>
+                        <div class="zc-card-Display-control">
+                            <button onclick="RandomImg_Start()" class="zc-Display-Img-refresh">
+                                <span class="zc-Display-Img-refresh-content">Refresh</span></button>
+                            <a id="Img-download" class="zc-Display-Img-download">
+                                <span class="zc-Display-Img-download-content">
+                                    Download
+                                </span>
+                            </a>
+                        </div>
                 </div>
 
 
