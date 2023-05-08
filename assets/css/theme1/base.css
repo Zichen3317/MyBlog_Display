@@ -1,0 +1,71 @@
+#rin-bg {
+  background-image: url("../theme1/background.jpg") !important;
+}
+
+body {
+  font-family: "SmileySans";
+}
+
+/*侧边栏*/
+.rin-left {
+  background-color: white;
+  border-radius: 20px;
+}
+    
+.rin-left .rin-logo img {
+  border-radius: 50%;
+}
+
+.rin-left .rin-logo img:hover {
+  -webkit-animation: rotate-center 0.6s ease-in-out both;
+  animation: rotate-center 0.6s ease-in-out both;
+}
+
+.rin-left .rin-left-title {
+  color: #ff4500;
+}
+.rin-left .rin-left-title2 {
+  color: rgba(255, 69, 0, 0.6);
+}
+.rin-left .rin-left-slogan {
+  color: #999d9c;
+}
+.rin-left .rin-btn-left {
+  color: #3e4145;
+}
+/*文章*/
+#Article {
+  background-color: white;
+  border-radius: 20px;
+  border-color: none;
+}
+
+.rin-card-article-zc .rin-article-title {
+  color: black;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.rin-card-article-zc .rin-article-content h1 {
+  color: #3e4145;
+}
+
+.rin-card-article-zc .rin-article-content h2 {
+  color: red;
+}
+
+.rin-card-article-zc .rin-article-content h2::before {
+  content: "#";
+}
+
+.rin-card-article-zc .rin-article-content p {
+  color: #999d9c;
+}
+
+pre {
+  background-color: #1d1e22;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 2px;
+}

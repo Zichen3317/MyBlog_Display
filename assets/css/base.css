@@ -1,6 +1,6 @@
 
 /*内部元素水平排布的容器*/
-.rin-card-Horizontal{
+.rin-card-horizontal{
     display: flex;
     /* 设置为flex布局，实现水平排列效果 */
     justify-content: left;
@@ -40,14 +40,6 @@ select{
     background: rgba(255, 64, 129, .35);
 }
 
-/*信息展示框*/
-.article-info {
-    margin: 5px 5px 5px 5px;
-    border-radius: 10px;
-    border: 1px #fff dashed;
-    background-color: rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(3px); /*毛玻璃效果*/
-  }
 /*卡片容器样式*/
 .rin-card-article-zc {
 border-radius: 10px;

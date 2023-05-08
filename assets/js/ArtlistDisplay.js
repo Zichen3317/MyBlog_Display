@@ -96,6 +96,22 @@ function Display(Display_data) {
     });
   }
   console.debug("[Article]完成写入-2");
+
+  console.debug("[Navigation]开始写入");
+  //写入部分
+  const Navigation = document.getElementById("Navigation");
+  let NavigationHtml = "";
+  NavigationHtml+=`
+  <i class="fa fa-home" style="font-size:16px;color: white;"></i>
+  <a style="font-size:16px;"href="../../index.html">&nbsp;主页</a>
+  <i style="color: #d9d6c3;font-weight: bold;">&nbsp;/&nbsp;</i>
+  <a style="font-size:16px;"href="./category.html">&nbsp;博客</a>
+  <i style="color: #d9d6c3;font-weight: bold;">&nbsp;/&nbsp;</i>
+  <i style="font-size:16px;font-family: 'SmileySans';color: #d9d6c3;font-weight: bold;">&nbsp;${Display_article_genre}</i>
+  `
+  Navigation.innerHTML = NavigationHtml;
+  
+  console.debug("[Navigation]完成写入");
 }
 
 fetch("https://database.deta.sh/v1/c0z1mow5/MyBlog_Article/query", {

@@ -16,11 +16,13 @@
 /*导航栏*/
 .rin-card-navigation-new{
     font-family: 'SmileySans';
+    margin-bottom: 15px;
 }
 .rin-card-navigation-new a{
-    color: #696969;
+    color: #4f5555;
     font-weight: bold;
     text-decoration: none;
+
 }
 .rin-card-navigation-new a:hover{
     color: #ff4500;
