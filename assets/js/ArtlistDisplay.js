@@ -62,18 +62,18 @@ function Classify_Genre(SPLIT_Data) {
 //写入页面函数
 function Display(Display_data) {
   let searchParams = new URLSearchParams(location.search);
-  let Display_article_data = searchParams.get("genre");
+  let Display_article_genre = searchParams.get("genre");
   console.debug("[Article]开始写入页面");
-  console.log(Display_data[Display_article_data]);
+  console.log(Display_data[Display_article_genre]);
   //写入部分
   const ArticleList = document.getElementById("Article-list");
   let ArticleHtml = "";
-  for (let i = 0; i < Display_data[Display_article_data].length; i++) {
+  for (let i = 0; i < Display_data[Display_article_genre].length; i++) {
     ArticleHtml += `
-            <a target="_blank" href="./article.html" id=${Display_data[Display_article_data][i][0]}>
+            <a target="_blank" href="./article.html" id=${Display_data[Display_article_genre][i][0]}>
                 <div class="mdui-card rin-card rin-card-article" style="margin-bottom: 10px;">
-                    <div class="rin-article-title">${Display_data[Display_article_data][i][0]}</div>
-                    <div class="rin-article-content">${Display_data[Display_article_data][i][1]}</div>
+                    <div class="rin-article-title">${Display_data[Display_article_genre][i][0]}</div>
+                    <div class="rin-article-content">${Display_data[Display_article_genre][i][1]}</div>
                 </div>
             </a>
             `;
@@ -81,15 +81,16 @@ function Display(Display_data) {
   ArticleList.innerHTML += ArticleHtml;
   console.debug("[Article]完成写入-1");
 
-  for (let i = 0; i < Display_data[Display_article_data].length; i++) {
+  for (let i = 0; i < Display_data[Display_article_genre].length; i++) {
     let link = document.getElementById(
-      Display_data[Display_article_data][i][0]
+      Display_data[Display_article_genre][i][0]
     ); // 获取链接元素
     link.addEventListener("click", function (event) {
       event.preventDefault(); // 阻止默认行为
       // 构造URL参数
       let params = new URLSearchParams();
-      params.append("title", Display_data[Display_article_data][i][0]); //给文章列表传递文章类别
+      params.append("genre",Display_article_genre)
+      params.append("title", Display_data[Display_article_genre][i][0]); //给文章列表传递文章类别
       // 跳转到目标页面并传递参数
       location.href = "./article.html?" + params.toString();
     });

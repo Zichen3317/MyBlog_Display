@@ -1,0 +1,33 @@
+/*文字样式*/
+/*字体后缀和浏览器有关，如下所示
+* .TTF或.OTF，适用于Firefox 3.5、Safari、Opera 
+* .EOT，适用于Internet Explorer 4.0+ 
+* .SVG，适用于Chrome、IPhone 
+*/
+@font-face {
+    font-family: 'SmileySans';
+    src: url('../../fonts/smiley-sans-v1.1.1/SmileySans-Oblique.otf') format("opentype"),
+         url('../../fonts/smiley-sans-v1.1.1/SmileySans-Oblique.ttf') format('truetype'),
+         url('../../fonts/smiley-sans-v1.1.1/SmileySans-Oblique.otf.woff2') format('woff2'),
+         url('../../fonts/smiley-sans-v1.1.1/SmileySans-Oblique.ttf.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/*导航栏*/
+.rin-card-navigation-new{
+    font-family: 'SmileySans';
+}
+.rin-card-navigation-new a{
+    color: #696969;
+    font-weight: bold;
+    text-decoration: none;
+}
+.rin-card-navigation-new a:hover{
+    color: #ff4500;
+}
+/*调整字体用的附加样式*/
+.new-font{
+    font-family: 'SmileySans';
+    font-weight: bold;
+    text-decoration: none;
+}

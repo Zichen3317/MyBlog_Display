@@ -23,9 +23,11 @@ Tip：这里将文章标题插入到首项中
 //写入页面函数
 function Display(Display_data) {
   let searchParams = new URLSearchParams(location.search);
-  let Display_article_data = searchParams.get("title");
+  let Display_article_title = searchParams.get("title");
+  let Display_article_genre = searchParams.get("genre");
+
   console.debug("[Article]开始写入页面");
-  console.log(Display_data[Display_article_data]);
+  console.log(Display_data[Display_article_title]);
   //写入部分
   const ArticleList = document.getElementById("Article");
   let ArticleHtml = "";
@@ -35,19 +37,19 @@ function Display(Display_data) {
   <div class="article-info">
   <div class="rin-article-more">
   <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-key"></span>&nbsp;数据库ID:&nbsp;${
-    Display_data[Display_article_data][2]
+    Display_data[Display_article_title][2]
   }&nbsp;<br></div>
   <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-id-card-o"></span>&nbsp;作者:&nbsp;${
-    Display_data[Display_article_data][9]
-  }&nbsp;${Display_data[Display_article_data][8]}&nbsp;<br></div>
+    Display_data[Display_article_title][9]
+  }&nbsp;${Display_data[Display_article_title][8]}&nbsp;<br></div>
   <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;发布时间:&nbsp;${
-    Display_data[Display_article_data][5].split(".")[0]
+    Display_data[Display_article_title][5].split(".")[0]
   }&nbsp;<br></div>
   <div style="margin-bottom:5px;margin-top:5px"><span class="fa fa-calendar-o"></span>&nbsp;最后一次编辑时间:&nbsp;${
-    Display_data[Display_article_data][4].split(".")[0]
+    Display_data[Display_article_title][4].split(".")[0]
   }</div>
   <div style="margin-bottom:5px;margin-top:5px"><span class=" 	fa fa-tags"></span>&nbsp;类型:&nbsp;${Display_data[
-    Display_article_data
+    Display_article_title
   ][11]
     .split("丨")
     .join("&nbsp;")}</div>
@@ -58,9 +60,9 @@ function Display(Display_data) {
   //文章主主体
   ArticleHtml += `
 
-<div class="rin-card-article zc-card-article">
-    <div class="rin-article-title">${Display_article_data}</div>
-    <div class="rin-article-content">${Display_data[Display_article_data][1]}</div>
+<div class="rin-card-article rin-card-article-zc" >
+    <div class="rin-article-title">${Display_article_title}</div>
+    <div class="rin-article-content">${Display_data[Display_article_title][1]}</div>
 </div>
             `;
   ArticleList.innerHTML += ArticleHtml;
@@ -70,6 +72,22 @@ function Display(Display_data) {
   // 行号显示
   //hljs.initLineNumbersOnLoad({ singleLine: true });
   console.debug("[Article]完成写入");
+
+  console.debug("[Navigation]开始写入");
+  //写入部分
+  const Navigation = document.getElementById("Navigation");
+  let NavigationHtml = "";
+  NavigationHtml+=`
+  <i class="fa fa-home" style="font-size:16px;color: white;"></i>
+  <a style="font-size:16px;"href="./category.html">&nbsp;主页</a>
+  <i style="color: #808080;font-weight: bold;">&nbsp;/&nbsp;</i>
+  <a style="font-size:16px;"href="./articlelist.html?genre=${Display_article_genre}">&nbsp;${Display_article_genre}</a>
+  <i style="color: #808080;font-weight: bold;">&nbsp;/&nbsp;</i>
+  <i style="font-size:16px;font-family: 'SmileySans';color: #696969;font-weight: bold;">&nbsp;${Display_article_title}</i>
+  `
+  Navigation.innerHTML = NavigationHtml;
+  
+  console.debug("[Navigation]完成写入");
 }
 
 let searchParams = new URLSearchParams(location.search);
