@@ -1,3 +1,119 @@
+/*内部元素水平排布的容器*/
+.rin-card-Horizontal{
+    display: flex;
+    /* 设置为flex布局，实现水平排列效果 */
+    justify-content: left;
+    /* 设置子元素在容器中居中显示 */
+    flex-wrap: wrap;
+    /*流动布局*/
+}
+/*下拉选择框*/
+select{
+    border-radius: 19px;
+    background: rgba(0,0,0,0.1);
+    box-shadow:  10px 10px 20px rgba(0,0,0,.01),
+                 -10px -10px 20px rgba(0,0,0,.02);
+    color: #fff;
+  }
+  option{
+    border-radius: 19px;
+    background:  rgba(0,0,0,0.1);
+    box-shadow:  10px 10px 20px rgba(0,0,0,.01),
+                 -10px -10px 20px rgba(0,0,0,.02);
+    color: #fff;
+  }
+  option :hover{
+    background: rgba(0,0,0,0.3);
+  }
+  body {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    color: #e0e0e0;
+    background: rgba(255, 64, 129, .35);
+}
+
+/*信息展示框*/
+.article-info {
+    margin: 5px 5px 5px 5px;
+    border-radius: 10px;
+    border: 1px #fff dashed;
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(3px); /*毛玻璃效果*/
+  }
+/*卡片容器样式*/
+.rin-card-article-zc {
+border-radius: 10px;
+backdrop-filter: blur(5px); /*毛玻璃效果*/
+border: 3px solid rgba(0, 0, 0, 0.08);
+}
+
+/*补充圆角*/
+.rin-btn-radius {
+    border-radius: 20px;
+  }
+  
+/*原main.css和index.css*/
+#rin-bg {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    /*background-color: #818181;*/
+    background-image: url('../img/background.jpg');
+}
+
+#rin-bg:after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    z-index: -1;
+    position: fixed;
+    background-color: rgba(66, 66, 66, .6);
+}
+
+#rin-footer {
+    bottom: 0;
+    margin: auto;
+    width: 100vw;
+    position: absolute;
+    padding: 10px 0 10px 0;
+}
+
+#rin-footer div {
+    font-size: 14px;
+    text-align: center;
+    color: rgba(255, 255, 255, .79);
+}
+
+#rin-footer div a {
+    color: #2196f3;
+    font-weight: 700;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+.rin-tr {
+    width: 80%;
+    height: 2px;
+    margin: auto;
+    background: rgba(255, 255, 255, .3);
+}  
+
 #rin-main {
     /*padding: 20px 25px;*/
     padding: 20px 0;
@@ -55,6 +171,7 @@
 
 /*}*/
 
+/*卡片容器样式*/
 .rin-card {
     /*margin: 20px 0;*/
     padding: 20px 25px;
@@ -89,7 +206,7 @@
     margin-bottom: 15px;
     margin-top: 10px;
 }
-
+/*进度条样式*/
 .mdui-progress {
     background-color: rgba(255, 255, 255, .2) !important;
     height: 6px;
@@ -112,7 +229,7 @@
 .mdui-tooltip {
     margin-top: 20px !important;
 }
-
+/*按钮样式*/
 .rin-btn {
     color: white;
     margin-right: 10px;
@@ -189,12 +306,21 @@
     color: black;
     transition: all .3s;
 }
-
+/*左边侧边栏颜色拓展*/
+.rin-btn-purple {
+    border-bottom: 1.5px solid #ee82ee;
+  }
+  
+  .rin-btn-purple:hover {
+    background-color: #ee82ee;
+    transition: all 0.3s;
+  }
+/*中部与底部之间的分割线*/
 .rin-tr {
     margin-top: 40px;
     margin-bottom: 20px;
 }
-
+/*博客文章样式*/
 .rin-card-article{
     padding:15px;
     /*margin-bottom: 10px;*/

@@ -159,7 +159,10 @@ function NodeToTag(){
     for(i=0;i<vilipix_ImgTag.length;i++){
       var opt = new Option(vilipix_ImgTag[i][0],vilipix_ImgTag[i][1]);
       ImgTagSelect.options.add(opt);
-    }
+    } 
+  }else if(ImgNode==="---请选择节点---"){
+    var opt = new Option("---请先选择节点---","---请先选择节点---");
+    ImgTagSelect.options.add(opt);
   }
 }
 

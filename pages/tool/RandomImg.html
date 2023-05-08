@@ -5,11 +5,10 @@
     <title>随机壁纸</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AyagawaSeirin/homepage@latest/mdui/css/mdui.min.css">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
     <!--自定义css-->
-    <link rel="stylesheet" href="../../assets/css/zc-display.css">
     <link rel="stylesheet" href="../../assets/css/randomimg.css">
+    <link rel="stylesheet" href="../../assets/css/model/loading.css">
     <!-- <link rel="stylesheet" href="/assets/css/detaile.css"> -->
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_1625701_q2422cy34wn.css">
     <link rel="stylesheet" href="../../assets/img/font-awesome-4.7.0/css/font-awesome.css">
@@ -68,10 +67,11 @@
                 <!--文章部分-->
                 <div class="rin-card-title2 mdui-typo">工具>随机壁纸</div>
 
-                <div class="zc-card-article">
+                <div class="rin-card-article-zc">
 
                         <div>
-                            <form class="zc-card-Display-node-selection" style="margin-left: 10px;margin-top: 5px;color: #fff;">
+                            <!--上方节点以及tag选择-->
+                            <form class="rin-card-Horizontal" style="margin-left: 10px;margin-top: 5px;color: #fff;">
                                 <!--选择图片来源-->
                                 <div>
                                     选择图片来源：
@@ -84,6 +84,7 @@
                                     <!--选择图片tag-->
                                     选择图片tag(暂不开放自定义)：
                                     <select id="ImgTag">
+                                        <option>---请先选择节点---</option>
                                         <!--写入tag用-->
                                     </select>
                                 </div>
@@ -93,11 +94,12 @@
                         <div class="zc-card-Display-Img" id="Display_Img">
                             <!--写入图片用-->
                         </div>
-                        <div class="zc-card-Display-control">
-                            <button onclick="RandomImg_Start()" class="zc-Display-Img-refresh">
-                                <span class="zc-Display-Img-refresh-content">Refresh</span></button>
-                            <a id="Img-download" class="zc-Display-Img-download">
-                                <span class="zc-Display-Img-download-content">
+                        <!--控制部分-->
+                        <div class="rin-card-Horizontal">
+                            <button onclick="RandomImg_Start()" class="refresh">
+                                <span class="refresh-content">Refresh</span></button>
+                            <a id="Img-download" class="download">
+                                <span class="download-content">
                                     Download
                                 </span>
                             </a>

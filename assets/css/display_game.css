@@ -1,15 +1,4 @@
 /*主页游戏展示框*/
-.game-display-container {
-    display: flex;
-    /* 设置为flex布局，实现水平排列效果 */
-    justify-content: left;
-    /* 设置子元素在容器中居中显示 */
-    flex-wrap: wrap;
-    /*流动布局*/
-    border: 1px #a52a2a dashed; /*断断续续*/
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
   
   .game-display {
     position: relative;

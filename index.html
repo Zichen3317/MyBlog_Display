@@ -5,10 +5,13 @@
   <title>梓宸の主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AyagawaSeirin/homepage@latest/mdui/css/mdui.min.css" />
-  <link rel="stylesheet" href="./assets/css/main.css" />
-  <link rel="stylesheet" href="./assets/css/index.css" />
-  <link rel="stylesheet" href="./assets/css/zc-display.css" />
-  <link rel="stylesheet" href="./assets/css/index_game.css" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <!--自定义css-->
+  
+  <!--引入可能要更改的模块式css-->
+  <style>
+    @import url("assets/css/display_game.css");
+  </style>
   <!--测试用css-->
   <link rel="stylesheet" href="./assets/css/test.css" />
   <!-- <link rel="stylesheet" href="/assets/css/detaile.css"> -->
@@ -219,7 +222,7 @@
               <a href="#">#</a> 游戏 - 成分一目了然(悲)
             </div>
 
-            <div class="game-display-container" id="PC">
+            <div class="rin-card-Horizontal" id="PC" style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
               <div class="game-btn" style="--color: #00aa55;">
                 单机游戏
               </div>
@@ -255,7 +258,7 @@
               </div>
             </div>
 
-            <div class="game-display-container" id="Online">
+            <div class="rin-card-Horizontal" id="Online" style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
               <div class="game-btn" style="--color: #ddb614;">
                 联机游戏
               </div>
@@ -291,7 +294,7 @@
 
             </div>
 
-            <div class="game-display-container" id="Cloud">
+            <div class="rin-card-Horizontal" id="Cloud" style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
               <div class="game-btn" style="--color: #ff9731;">
                 云过的游戏
               </div>
