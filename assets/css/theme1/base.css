@@ -1,3 +1,23 @@
+/*导航栏*/
+.rin-card-navigation-new{
+  font-family: 'SmileySans';
+  margin-bottom: 15px;
+}
+.rin-card-navigation-new a{
+  color: #4f5555;
+  font-weight: bold;
+  text-decoration: none;
+}
+.rin-card-navigation-new a:hover{
+  color: #ff4500;
+}
+/*调整字体用的附加样式*/
+.new-font{
+  font-family: 'SmileySans';
+  font-weight: bold;
+  text-decoration: none;
+}
+/*网页主体*/
 #rin-bg {
   background-image: url("../theme1/background.jpg") !important;
 }
@@ -41,11 +61,6 @@ body {
   border-radius: 20px;
   border-color: none;
 }
-#Article-list{
-    background-color: white;
-      border-radius: 20px;
-        border-color: none;
-}
 
 .rin-card-article-zc .rin-article-title {
   color: black;
@@ -53,6 +68,10 @@ body {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.rin-card-article-zc .rin-article-content p{
+  font-size: 16px;
 }
 
 .rin-card-article-zc .rin-article-content h1 {

@@ -34,14 +34,14 @@ function Classify_Genre(SPLIT_Data) {
   for (let i = 0; i < SPLIT_Data.length; i++) {
     //遍历文章
     var Article_Genre = SPLIT_Data[i][12].split("丨"); //在js中如果list[-1]会返回undefined
-    console.log(Article_Genre);
-    console.log(Object.keys(result_Classify_Genre));
+    //console.log(Article_Genre);
+    //console.log(Object.keys(result_Classify_Genre));
     for (let j = 0; j < Article_Genre.length; j++) {
       if (
         Object.keys(result_Classify_Genre).includes(Article_Genre[j]) === true
       ) {
         //如果该类型在存储字典的key中
-        console.log(Object.keys(result_Classify_Genre));
+        //console.log(Object.keys(result_Classify_Genre));
         result_Classify_Genre[Article_Genre[j]].push(SPLIT_Data[i]);
       } else {
         //否则创建新的
@@ -64,18 +64,26 @@ function Display(Display_data) {
   let searchParams = new URLSearchParams(location.search);
   let Display_article_genre = searchParams.get("genre");
   console.debug("[Article]开始写入页面");
-  console.log(Display_data[Display_article_genre]);
+  //console.log(Display_data[Display_article_genre]);
+
+  //console.debug("输出Display_data")
+  //console.debug(Display_data)
+  //console.debug("输出Display_data完毕")
+
   //写入部分
   const ArticleList = document.getElementById("Article-list");
   let ArticleHtml = "";
   for (let i = 0; i < Display_data[Display_article_genre].length; i++) {
     ArticleHtml += `
-            <a target="_blank" href="./article.html" id=${Display_data[Display_article_genre][i][0]}>
+            
                 <div class="mdui-card rin-card rin-card-article" style="margin-bottom: 10px;">
+                <a target="_blank" href="./article.html" id=${Display_data[Display_article_genre][i][0]}>
                     <div class="rin-article-title">${Display_data[Display_article_genre][i][0]}</div>
+                </a>
                     <div class="rin-article-content">${Display_data[Display_article_genre][i][1]}</div>
+                    <div class="rin-article-content">${Display_data[Display_article_genre][i][6].split(" ")[0]}</div>
                 </div>
-            </a>
+            
             `;
   }
   ArticleList.innerHTML += ArticleHtml;

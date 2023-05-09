@@ -38,16 +38,26 @@ function Display(Display_data) {
 <div class="rin-card-article rin-card-article-zc" >
     <div class="rin-article-title">${Display_article_title}</div>
     <div class="rin-card-horizontal" >
-      <div>
-          <a class="rin-card-navigation-new"" >
+      <!--文章基本信息-->
+      <div class="rin-article-info">
+          <a class="rin-article-authorinfo" href="../About.html" >
           ${Display_data[Display_article_title][9]}&nbsp;${Display_data[Display_article_title][8]}</a><br>
           ${Display_data[Display_article_title][5].split(" ")[0]}&nbsp;
           <i style="color: #d9d6c3;font-weight: bold;">&nbsp;/&nbsp;</i>
           <i style="color: green;">已上传</i>
       </div>
+
       <div style="margin-left:auto;">
           <i style="color: #d9d6c3;font-size: 36px;">${Display_data[Display_article_title][5].split(" ")[0].split("-").slice(1,3).join('/')}</i>
       </div>
+    </div>
+    <!--备注-->
+    <div class="rin-article-remark rin-card-horizontal">
+        <i class="fa fa-info"></i>
+        <i>
+        备注:<br>
+        ${Display_data[Display_article_title][6]}
+        </i>
     </div>
     <div class="rin-article-content">${Display_data[Display_article_title][1]}</div>
 </div>

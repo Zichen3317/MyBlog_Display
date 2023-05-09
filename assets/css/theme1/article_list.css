@@ -1,0 +1,41 @@
+#Article-list{
+    background-color: white;
+      border-radius: 20px;
+        border-color: none;
+}
+#Article-list .rin-card {
+    background-color: rgba(0, 0, 0, 0) !important;
+}    
+#Article-list .rin-card a{
+    text-decoration: none;
+}
+
+#Article-list .rin-card .rin-article-title{
+    color: #3e4145;
+
+}
+#Article-list .rin-card .rin-article-title:hover{
+    color: #ff4500;
+}
+
+#Article-list .rin-card .rin-article-content{
+    color: rgba(62,65,69,.7);
+}
+.rin-article-authorinfo{
+    color: #ff4500;
+}
+.rin-article-authorinfo:hover{
+    border-bottom: 1px solid #ff4500;
+}
+.rin-article-remark{
+    border-radius: 5px;
+    border:1px solid rgba(255, 140, 0,1);
+    color: #d2691e;
+    background-color: rgba(255, 140, 0,.2);
+    /*设置水平居中*/
+    display: flex;
+    justify-content: center;
+}
+.rin-article-remark .fa-info{
+    color: rgba(255, 140, 0,1);
+}

@@ -2,3 +2,6 @@
 * @import url("相对路径");
 */
 @import url("./theme1/base.css");
+@import url("./theme1/article_list.css");
+@import url("./theme1/animista.css");
+@import url("./theme1/text_style.css");
