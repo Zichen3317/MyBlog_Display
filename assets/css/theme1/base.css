@@ -72,18 +72,15 @@ body {
 
 .rin-card-article-zc .rin-article-content p{
   font-size: 16px;
+  color: #3e4145;
 }
 
-.rin-card-article-zc .rin-article-content h1+h2+h3+h4+h5 {
+.rin-card-article-zc .rin-article-content h1~h2~h3~h4~h5 {
   color: #3e4145;
 }
 
 .rin-card-article-zc .rin-article-content h2::before {
   content: "#";
-}
-
-.rin-card-article-zc .rin-article-content p {
-  color: #999d9c;
 }
 
 .rin-card-article-zc .rin-article-content strong {
