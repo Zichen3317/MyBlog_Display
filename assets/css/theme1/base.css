@@ -36,10 +36,15 @@ body {
   color: #3e4145;
 }
 /*文章*/
-#Article #Article_list{
+#Article{
   background-color: white;
   border-radius: 20px;
   border-color: none;
+}
+#Article_list{
+    background-color: white;
+      border-radius: 20px;
+        border-color: none;
 }
 
 .rin-card-article-zc .rin-article-title {
