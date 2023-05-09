@@ -5,7 +5,9 @@
 body {
   font-family: "SmileySans";
 }
-
+#Article_Content{
+  box-shadow: rgba(0, 0, 0, 0.5);
+}
 /*侧边栏*/
 .rin-left {
   background-color: white;
@@ -34,7 +36,7 @@ body {
   color: #3e4145;
 }
 /*文章*/
-#Article {
+#Article #Article_list{
   background-color: white;
   border-radius: 20px;
   border-color: none;
