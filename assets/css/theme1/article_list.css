@@ -21,13 +21,13 @@
 #Article-list .rin-card .rin-article-content{
     color: rgba(62,65,69,.7);
 }
-.rin-article-authorinfo{
+#Article-list .rin-article-authorinfo{
     color: #ff4500;
 }
-.rin-article-authorinfo:hover{
+#Article-list .rin-article-authorinfo:hover{
     border-bottom: 1px solid #ff4500;
 }
-.rin-article-remark{
+#Article-list .rin-article-remark{
     border-radius: 5px;
     border:1px solid rgba(255, 140, 0,1);
     color: #d2691e;
@@ -36,6 +36,6 @@
     display: flex;
     justify-content: center;
 }
-.rin-article-remark .fa-info{
+#Article-list .rin-article-remark .fa-info{
     color: rgba(255, 140, 0,1);
 }
