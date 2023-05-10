@@ -72,23 +72,42 @@ body {
 
 .rin-card-article-zc .rin-article-content p{
   font-size: 16px;
+  color: #3e4145;
 }
 
 .rin-card-article-zc .rin-article-content h1 {
   color: #3e4145;
 }
-
 .rin-card-article-zc .rin-article-content h2 {
-  color: red;
+  color: #3e4145;
 }
+
+.rin-card-article-zc .rin-article-content h3 {
+  color: #3e4145;
+}
+
+.rin-card-article-zc .rin-article-content h4 {
+  color: #3e4145;
+}
+
+.rin-card-article-zc .rin-article-content h5 {
+  color: #3e4145;
+}
+
 
 .rin-card-article-zc .rin-article-content h2::before {
   content: "#";
 }
 
-.rin-card-article-zc .rin-article-content p {
-  color: #999d9c;
+.rin-card-article-zc .rin-article-content strong {
+  color: red;
 }
+
+.rin-card-article-zc .rin-article-content a{
+  color: orange;
+  text-decoration: none;
+}
+
 
 pre {
   background-color: #1d1e22;
