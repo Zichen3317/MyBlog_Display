@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AyagawaSeirin/homepage@latest/mdui/css/mdui.min.css" />
   <link rel="stylesheet" href="./assets/css/base.css" />
   <!--自定义css-->
-  
+  <!--自定义主题-->
+  <!--
+  <link rel="stylesheet" href="../../assets/css/model.css">
+  -->
   <!--引入可能要更改的模块式css-->
   <style>
     @import url("assets/css/display_game.css");
@@ -63,8 +66,9 @@
           <a class="mdui-btn mdui-btn-raised rin-btn rin-btn-purple rin-btn-left mdui-text-capitalize"
             href="./pages/blog/category.html" target="_blank"><span class="iconfont iconBlog"></span> Blog</a>
 
-          <a class="mdui-btn mdui-btn-raised rin-btn rin-btn-purple rin-btn-left mdui-text-capitalize" href="./pages/tool/category.html"
-            target="_blank" id="rin-left-a-toolboxlist"><span class="fa fa-wrench"></span> Tool Box</a>
+          <a class="mdui-btn mdui-btn-raised rin-btn rin-btn-purple rin-btn-left mdui-text-capitalize"
+            href="./pages/tool/category.html" target="_blank" id="rin-left-a-toolboxlist"><span
+              class="fa fa-wrench"></span> Tool Box</a>
 
           <a class="mdui-btn mdui-btn-raised rin-btn rin-btn-purple rin-btn-left mdui-text-capitalize"
             href="./pages/About.html" target="_blank"><span class="iconfont iconabout"></span> About</a>
@@ -216,13 +220,24 @@
 
         </div>
 -->
+          <!--博客文章类别-->
+          <div class="rin-card-part" id="game">
+            <div class="rin-card-title2 mdui-typo">
+              <a href="#">#</a> 博客文章分类
+            </div>
+            <div id="Genre-list" class="rin-card-horizontal">
+              <!--用于js文件写入的定位的-->
+            </div>
+
+          </div>
           <!--游戏展示框-->
           <div class="rin-card-part" id="game">
             <div class="rin-card-title2 mdui-typo">
               <a href="#">#</a> 游戏 - 成分一目了然(悲)
             </div>
 
-            <div class="rin-card-horizontal" id="PC" style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
+            <div class="rin-card-horizontal" id="PC"
+              style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
               <div class="game-btn" style="--color: #00aa55;">
                 单机游戏
               </div>
@@ -258,7 +273,8 @@
               </div>
             </div>
 
-            <div class="rin-card-horizontal" id="Online" style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
+            <div class="rin-card-horizontal" id="Online"
+              style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
               <div class="game-btn" style="--color: #ddb614;">
                 联机游戏
               </div>
@@ -294,7 +310,8 @@
 
             </div>
 
-            <div class="rin-card-horizontal" id="Cloud" style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
+            <div class="rin-card-horizontal" id="Cloud"
+              style="border: 1px #a52a2a dashed; /*断断续续*/border-radius: 10px;margin-bottom: 10px;">
               <div class="game-btn" style="--color: #ff9731;">
                 云过的游戏
               </div>
@@ -336,6 +353,9 @@
   </main>
   <script src="https://cdn.jsdelivr.net/gh/AyagawaSeirin/homepage@latest/mdui/js/mdui.min.js"></script>
   <!--<script src="/assets/js/main.js"></script>-->
+  <!--博客内容展示-->
+  <script src="./assets/js/index.js"></script>
+
 </body>
 
 </html>
