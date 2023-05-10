@@ -1,0 +1,30 @@
+#Genre-list{
+    background-color: white;
+      border-radius: 20px;
+        border-color: none;
+}
+#Genre-list .rin-card {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-radius: 20px;
+}    
+#Genre-list a{
+    text-decoration: none;
+}
+
+#Genre-list .rin-card .rin-article-title{
+    color: #3e4145;
+
+}
+#Genre-list .rin-card .rin-article-title:hover{
+    color: #ff4500;
+}
+#Genre-list .rin-article-info{
+    width: 30px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+    font-size: 12px;
+    background-image: linear-gradient(to right,#2afcfc,#4f3edd);
+    border-radius: 8px;
+}

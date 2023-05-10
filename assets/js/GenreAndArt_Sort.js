@@ -38,13 +38,13 @@ function Classify_Genre(SPLIT_Data) {
     for (let j = 0; j < Article_Genre.length; j++) {
       if (Article_Genre[j] in Object.keys(result_Classify_Genre)) {
         //如果该类型在存储字典的key中
-        console.log(Object.keys(result_Classify_Genre));
+        //console.log(Object.keys(result_Classify_Genre));
         result_Classify_Genre[Article_Genre[j]].push(SPLIT_Data[i]);
       } else {
         //否则创建新的
         result_Classify_Genre[Article_Genre[j]] = []; //创建新key
         result_Classify_Genre[Article_Genre[j]].push(SPLIT_Data[i]);
-        console.log(Object.keys(result_Classify_Genre));
+        //console.log(Object.keys(result_Classify_Genre));
       }
     }
   }
@@ -60,12 +60,13 @@ function Classify_Genre(SPLIT_Data) {
 function Display(Display_data) {
   console.debug("[Display]开始写入页面");
   //写入部分
-
+  console.log(Display_data)
   const GenreList = document.getElementById("Genre-list");
   let GenreHtml = "";
   for (let i = 0; i < Object.keys(Display_data).length; i++) {
     //console.debug(Object.keys(Display_data)[i]);
     GenreHtml += `
+        <div class="rin-card-horizontal" style="margin-left: 10px;margin-top:10px;">
         <a target="_blank" href="./articlelist.html" id=${
           Object.keys(Display_data)[i]
         }>
@@ -73,6 +74,8 @@ function Display(Display_data) {
             <div class="rin-article-title">${Object.keys(Display_data)[i]}</div>
         </div>
         </a>
+        <div class="rin-article-info">${Display_data[Object.keys(Display_data)[i]].length}篇</div>
+        </div>
         `;
   }
   GenreList.innerHTML += GenreHtml;

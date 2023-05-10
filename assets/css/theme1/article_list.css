@@ -5,6 +5,7 @@
 }
 #Article-list .rin-card {
     background-color: rgba(0, 0, 0, 0) !important;
+    border-radius: 20px;
 }    
 #Article-list .rin-card a{
     text-decoration: none;
