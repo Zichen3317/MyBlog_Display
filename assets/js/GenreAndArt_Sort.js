@@ -36,7 +36,7 @@ function Classify_Genre(SPLIT_Data) {
     var Article_Genre = SPLIT_Data[i][12].split("丨"); //在js中如果list[-1]会返回undefined
 
     for (let j = 0; j < Article_Genre.length; j++) {
-      if (Article_Genre[j] in Object.keys(result_Classify_Genre)) {
+      if (Object.keys(result_Classify_Genre).includes(Article_Genre[j]) === true) {
         //如果该类型在存储字典的key中
         //console.log(Object.keys(result_Classify_Genre));
         result_Classify_Genre[Article_Genre[j]].push(SPLIT_Data[i]);

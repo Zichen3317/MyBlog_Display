@@ -29,14 +29,14 @@ Tip：这里将文章标题插入到首项中
 function Classify_Genre(SPLIT_Data) {
   console.debug("[Classify_Genre]数据开始按类型分类");
   var SPLIT_Data = SPLIT_Data;
-  //console.log(SPLIT_Data);
+  console.log(SPLIT_Data);
   let result_Classify_Genre = {};
   for (let i = 0; i < SPLIT_Data.length; i++) {
     //遍历文章
     var Article_Genre = SPLIT_Data[i][12].split("丨"); //在js中如果list[-1]会返回undefined
 
     for (let j = 0; j < Article_Genre.length; j++) {
-      if (Article_Genre[j] in Object.keys(result_Classify_Genre)) {
+      if (Object.keys(result_Classify_Genre).includes(Article_Genre[j]) === true) {
         //如果该类型在存储字典的key中
         //console.log(Object.keys(result_Classify_Genre));
         result_Classify_Genre[Article_Genre[j]].push(SPLIT_Data[i]);
@@ -56,11 +56,11 @@ function Classify_Genre(SPLIT_Data) {
   return result_Classify_Genre;
 }
 
-//写入页面函数
-function Display(Display_data) {
+//类型写入
+function Genre_Display(Display_data) {
   console.debug("[Genre]开始写入页面");
   //博客类型写入部分
-  console.log(Display_data)
+  //console.log(Display_data)
   const GenreList = document.getElementById("Genre-list");
   let GenreHtml = "";
   for (let i = 0; i < Object.keys(Display_data).length; i++) {
@@ -94,6 +94,44 @@ function Display(Display_data) {
   }
   console.debug("[Genre]完成写入-2");
 }
+//文章写入
+function Article_Display(Split_data){
+  console.debug("[LatestArt]开始写入页面");
+  //console.log(Split_data)
+  //注意此处获得的数据Split_data是列表[[文章1],[文章2],...]
+  const LatestArtList = document.getElementById("LatestArt-list");
+  let LatestArtHtml = "";
+  for (let i = 0; i < Split_data.length && i<3; i++) {
+    LatestArtHtml += `
+    <div class="mdui-card rin-card rin-card-article" style="margin-bottom: 10px;">
+    <a target="_blank" href="./article.html" id=${Split_data[i][0]}>
+        <div class="rin-article-title">${Split_data[i][0]}</div>
+    </a>
+        <div class="rin-article-content">${Split_data[i][1]}</div>
+        <div class="rin-article-content">${Split_data[i][6].split(" ")[0]}</div>
+    </div>
+        `;
+  }
+  LatestArtList.innerHTML += LatestArtHtml;
+  console.debug("[LatestArt]完成写入-1");
+
+  for (let i = 0; i < Split_data.length && i<3; i++) {
+    let link = document.getElementById(
+      Split_data[i][0]
+    ); // 获取链接元素
+    link.addEventListener("click", function (event) {
+      event.preventDefault(); // 阻止默认行为
+      // 构造URL参数
+      let params = new URLSearchParams();
+      params.append("genre", Split_data[i][12].split("丨")[0])
+      params.append("title", Split_data[i][0]); //给文章列表传递文章类别
+      // 跳转到目标页面并传递参数
+      location.href = "./pages/blog/article.html?" + params.toString();
+    });
+  }
+  console.debug("[LatestArt]完成写入-2");
+
+}
 
 fetch("https://database.deta.sh/v1/c0z1mow5/MyBlog_Article/query", {
   method: "POST",
@@ -107,6 +145,7 @@ fetch("https://database.deta.sh/v1/c0z1mow5/MyBlog_Article/query", {
     JsonData = data;
     console.debug("[DisplayModel.js]数据获取成功");
     //console.log(JsonData);
-    Display(Classify_Genre(SPLIT()));
+    Genre_Display(Classify_Genre(SPLIT()));
+    Article_Display(SPLIT());
   })
   .catch((error) => console.error(error));
