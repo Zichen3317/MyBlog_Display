@@ -63,7 +63,7 @@ function Genre_Display(Display_data) {
   //console.log(Display_data)
   const GenreList = document.getElementById("Genre-list");
   let GenreHtml = "";
-  for (let i = 0; i < Object.keys(Display_data).length; i++) {
+  for (let i = 0; i < Object.keys(Display_data).length && i<3; i++) {
     //console.debug(Object.keys(Display_data)[i]);
     GenreHtml += `
         <div class="rin-card-horizontal" style="margin-left: 10px;margin-top:10px;">
@@ -81,7 +81,7 @@ function Genre_Display(Display_data) {
   GenreList.innerHTML += GenreHtml;
   console.debug("[Genre]完成写入-1");
 
-  for (let i = 0; i < Object.keys(Display_data).length; i++) {
+  for (let i = 0; i < Object.keys(Display_data).length&& i<3; i++) {
     let link = document.getElementById(Object.keys(Display_data)[i]); // 获取链接元素
     link.addEventListener("click", function (event) {
       event.preventDefault(); // 阻止默认行为
@@ -89,7 +89,7 @@ function Genre_Display(Display_data) {
       let params = new URLSearchParams();
       params.append("genre", Object.keys(Display_data)[i]); //给文章列表传递文章类别
       // 跳转到目标页面并传递参数
-      location.href = "./pages/articlelist.html?" + params.toString();
+      location.href = "./pages/blog/articlelist.html?" + params.toString();
     });
   }
   console.debug("[Genre]完成写入-2");

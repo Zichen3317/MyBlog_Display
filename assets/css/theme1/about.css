@@ -1,0 +1,15 @@
+
+#About .rin-card-title2{
+    color: #3e4145;
+    margin-left: 10px;
+}
+#About{
+    background-color: white;
+    border-radius: 20px;
+    border-color: none;
+  }
+#About #contact .rin-btn{
+    color: #3e4145; 
+    margin-bottom: 10px;
+    margin-left: 10px;
+ }

@@ -1,0 +1,82 @@
+#Index_Content{
+    background-color: white;
+      border-radius: 20px;
+        border-color: none;
+}
+#Index_Content .rin-card {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-radius: 20px;
+}    
+#Index_Content a{
+    text-decoration: none;
+}
+
+#Index_Content .rin-article-title{
+    color: #3e4145;
+}
+#Index_Content .rin-article-title:hover{
+    color: #ff4500;
+}
+#Index_Content .rin-article-content{
+    color: rgba(62,65,69,.7);
+}
+
+#Index_Content .rin-card-title2{
+    color: #3e4145;
+}
+#Index_Content .rin-progress-title{
+    color: #3e4145;
+
+}
+/*进度条本体 作者：crazydeng*/
+#Index_Content .mdui-progress {
+    padding: 3px;
+    background: rgba(0, 0, 0, 0.25) !important;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25) , 0 1px rgba(255, 255, 255, 0.08)!important;
+  }
+  
+#Index_Content .mdui-progress-determinate {	
+    height: 10px;	
+    background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%) !important;
+    border-radius: 4px; 
+    width: 50%;
+}
+
+
+#Index_Content .rin-article-info{
+    width: 30px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+    font-size: 12px;
+    background-image: linear-gradient(to right,#2afcfc,#4f3edd);
+    border-radius: 8px;
+}
+#Index_Content .rin-card-content{
+    color: #3e4145;
+}
+#Index_Content #contact .rin-btn{
+   color: #3e4145; 
+}
+
+#Index_Content .rin-tr-container{
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 6px;
+}
+#Index_Content .rin-tr{
+    background-image: linear-gradient(to right,#2afcfc,#4f3edd);
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    width: 12% !important;
+    margin: 0% !important;
+    height: 2px;
+    border-radius:6px ;
+}
+#Index_Content .rin-card-img{
+    background-image: url("./index.webp");
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+}
