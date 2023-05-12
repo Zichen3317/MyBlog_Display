@@ -107,7 +107,9 @@ body {
   color: orange;
   text-decoration: none;
 }
-
+.rin-card-article-zc .rin-article-content li{
+  color: #3e4145;
+}
 
 pre {
   background-color: #1d1e22;
