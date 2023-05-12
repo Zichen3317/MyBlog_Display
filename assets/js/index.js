@@ -108,7 +108,7 @@ function Article_Display(Split_data){
         <div class="rin-article-title">${Split_data[i][0]}</div>
     </a>
         <div class="rin-article-content">${Split_data[i][1]}</div>
-        <div class="rin-article-content">${Split_data[i][6].split(" ")[0]}</div>
+        <div class="rin-article-content">${Split_data[i][5].split(" ")[0]}</div>
     </div>
         `;
   }

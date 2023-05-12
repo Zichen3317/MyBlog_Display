@@ -44,7 +44,7 @@ function Display(Display_data) {
           ${Display_data[Display_article_title][9]}&nbsp;${Display_data[Display_article_title][8]}</a><br>
           ${Display_data[Display_article_title][5].split(" ")[0]}&nbsp;
           <i style="color: #d9d6c3;font-weight: bold;">&nbsp;/&nbsp;</i>
-          <i style="color: green;">已上传</i>
+          <i style="color: green;">最后修改:&nbsp;${Display_data[Display_article_title][4].split(" ")[0]}</i>
       </div>
 
       <div style="margin-left:auto;">

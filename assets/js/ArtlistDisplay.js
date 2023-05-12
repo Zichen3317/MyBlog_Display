@@ -82,6 +82,7 @@ function Display(Display_data) {
                 </a>
                     <div class="rin-article-content">${Display_data[Display_article_genre][i][1]}</div>
                     <div class="rin-article-content">${Display_data[Display_article_genre][i][6].split(" ")[0]}</div>
+                    <div class="rin-article-content" style="color:orange">最后修改:&nbsp;${Display_data[Display_article_genre][i][5].split(" ")[0]}</div>
                 </div>
             
             `;
