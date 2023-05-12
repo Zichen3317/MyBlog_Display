@@ -96,7 +96,8 @@ body {
 
 
 .rin-card-article-zc .rin-article-content h2::before {
-  content: "#";
+  content: "# ";
+  color: red;
 }
 
 .rin-card-article-zc .rin-article-content strong {
